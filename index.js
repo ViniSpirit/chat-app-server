@@ -16,7 +16,7 @@ app.use(router)
 
 const io = socketio(server, {
   cors: {
-    origin: "https://laughing-edison-112d07.netlify.app",
+    origin: "https://upbeat-lamport-0b2335.netlify.app",
     methods: ["GET", "POST"],
     credentials: true,
   },
