@@ -18,6 +18,8 @@ const io = socketio(server, {
   cors: {
     origin: "https://vini-chat-app-react.netlify.app/",
     methods: ["GET", "POST"],
+    allowedHeaders: ["my-custom-header"],
+    credentials: true,
   },
 })
 
