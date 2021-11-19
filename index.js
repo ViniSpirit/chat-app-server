@@ -16,7 +16,7 @@ app.use(router)
 
 const io = socketio(server, {
   cors: {
-    origin: "https://vini-chat-app-react.netlify.app/",
+    origin: "https://laughing-edison-112d07.netlify.app",
     methods: ["GET", "POST"],
     allowedHeaders: ["my-custom-header"],
     credentials: true,
