@@ -14,13 +14,9 @@ const server = http.createServer(app)
 app.use(cors())
 app.use(router)
 
-const io = socketio(server, {
-  cors: {
-    origin: "https://upbeat-lamport-0b2335.netlify.app",
-    methods: ["GET", "POST"],
-    credentials: true,
-  },
-})
+const endpoint = "https://upbeat-lamport-0b2335.netlify.app"
+
+const io = socketio(server)
 
 io.on("connection", (socket) => {
   socket.on("join", ({ name, room }, callback) => {
