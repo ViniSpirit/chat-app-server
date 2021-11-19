@@ -11,12 +11,17 @@ const PORT = process.env.PORT || 5000
 const app = express()
 const server = http.createServer(app)
 
-app.use(cors())
+// app.use(cors())
 app.use(router)
 
-const endpoint = "https://upbeat-lamport-0b2335.netlify.app"
+const endpoint = "https://kind-payne-b272f1.netlify.app"
 
-const io = socketio(server)
+const io = socketio(server, {
+  cors: {
+    origin: endpoint,
+    methods: ["GET", "POST"],
+  },
+})
 
 io.on("connection", (socket) => {
   socket.on("join", ({ name, room }, callback) => {
