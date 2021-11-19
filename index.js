@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000
 const app = express()
 const server = http.createServer(app)
 
-// app.use(cors())
+app.use(cors())
 app.use(router)
 
 const endpoint = "https://kind-payne-b272f1.netlify.app"
